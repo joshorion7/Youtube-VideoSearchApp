@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import _ from 'lodash'; //Lodash import
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
@@ -7,11 +7,10 @@ import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
 const API_KEY = "AIzaSyCQ5lCX_E2zYehHnUGn_kW-phOkRS2gCBE";
 
-// Create a new component. This component should produce some HTML
-class App extends Component{
-  constructor(props) {
-    super();
 
+class App extends Component{
+  constructor() {
+    super();
     this.state = { 
       videos: [],
       selectedVideo: null
@@ -25,7 +24,7 @@ class App extends Component{
         videos: videos, 
       selectedVideo: videos[0]
       });
-      // Line 15 resolves as this.setState({ videos: videos });
+      // Line 21 resolves as this.setState({ videos: videos });
       //Only works when key value pair are the same string values
     });
   }
@@ -33,7 +32,8 @@ class App extends Component{
 
   render() {
 
-    const videoSearch = _.debounce((term) => { this.videoSearch(term) }, 300);
+    // Lodash function to control the time on running the videoSearch to the specified amount of time in milliseconds as the last parameter
+    const videoSearch = _.debounce((term) => { this.videoSearch(term) }, 500);
 
     return (
       <div>

@@ -1,11 +1,22 @@
-.search-bar {
-  margin: 20px;
-  text-align: center;
+body {
+  background-color: black;
 }
 
-.search-bar input {
+.search-bar {
+  margin: 20px;
+  border-radius: 5px;
   width: 75%;
+  outline: none;
+  /* box-shadow: 5px 5px 10px #8888; */
 }
+
+.search-bar:focus, .search-bar:hover {
+  box-shadow: 2px 2px 5px #8888;
+}
+
+/* .search-bar input {
+  width: 75%;
+} */
 
 .video-item img {
   max-width: 64px;
@@ -19,9 +30,13 @@
 }
 
 .list-group-item {
-  cursor: pointer;
+  cursor: pointer; 
+  /* When cursor travels over this element it turns into the pointer */
+  margin: 15px;
+  border-radius: 10px;
 }
 
 .list-group-item:hover {
   background-color: #eee;
+  box-shadow: 2px 2px 5px #8888;
 }
